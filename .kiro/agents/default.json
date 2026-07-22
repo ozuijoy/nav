@@ -1,0 +1,9 @@
+{
+  "name": "default",
+  "model": "claude-sonnet-4.5",
+  "fallbackModel": "claude-sonnet-4.5",
+  "description": "主模型：Claude Sonnet 4.5 | 備用：Claude Sonnet 4.5",
+  "effort": "medium",
+  "temperature": 0.5,
+  "topP": 0.9
+}
