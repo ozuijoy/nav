@@ -1,12 +1,14 @@
-// 开源项目，未经作者同意，不得以抄袭/复制代码/修改源代码版权信息。
+// 開源項目，未經作者同意，不得以抄襲/複製代碼/修改源代碼版權信息。
 import english from './english'
 import zh_CN from './zh_CN'
+import zh_TW from './zh_TW'
 import { STORAGE_KEY_MAP } from 'src/constants'
 import { settings } from 'src/store'
 
 const o = {
   en: english,
   cn: zh_CN,
+  tw: zh_TW,
 }
 
 export function getLocale(): string {
@@ -24,6 +26,9 @@ export function $t(s: string, map?: Record<string, any>): string {
     }
     return s
   }
+  if (l === 'zh-TW') {
+    return replaceStr(o.tw[s], map)
+  }
   if (l === 'zh-CN') {
     return replaceStr(o.cn[s], map)
   }
@@ -32,6 +37,10 @@ export function $t(s: string, map?: Record<string, any>): string {
 
 export function isZhCN(): boolean {
   return l === 'zh-CN'
+}
+
+export function isZhTW(): boolean {
+  return l === 'zh-TW'
 }
 
 export default o
